@@ -1,6 +1,12 @@
+import SearchForm from "../components/SearchForm";
 import TvShows from "../components/TvShows";
 const Home = () => {
-  return <TvShows />;
+  return (
+    <>
+      <SearchForm />
+      <TvShows />
+    </>
+  );
 };
 
 export default Home;
