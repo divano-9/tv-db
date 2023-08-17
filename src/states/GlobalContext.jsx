@@ -6,6 +6,7 @@ export const Context = createContext(); // import {Context}, then useContext(Con
 
 const GlobalContext = ({ children }) => {
   const sUrl = "https://api.tvmaze.com/search/shows?q=";
+  const baseUrl = "https://api.tvmaze.com/shows/";
 
   const [searchQ, setSearchQ] = useState("");
   const [querry, setQuerry] = useState("Attack on Titan");
@@ -21,6 +22,7 @@ const GlobalContext = ({ children }) => {
     setSearchQ,
     querry,
     setQuerry,
+    baseUrl,
   }; // store the values that need to bee passed down to other components
   return <Context.Provider value={{ ...values }}>{children}</Context.Provider>;
 };
