@@ -11,13 +11,24 @@ body {
   background: #222831;
 }
 
+#root {
+  max-width: 100%;
+  padding: 0;
+  min-height: 1vh;
+}
+
+section {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/*TvShows component*/
+
 .tv-shows {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-
-/*Card component*/
 
 .tv-show {
   padding: 0;
@@ -46,10 +57,6 @@ body {
   font-size: 2.5rem;
 }
 
-.tv-shows:nth-of-type(3) a h1 {
-  transform: translate(80%, 50%);
-}
-
 .tv-show a .img-container {
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -75,7 +82,7 @@ body {
   opacity: 50%;
   position: absolute;
   top: 0;
-  height: 98.5%;
+  height: 99%;
   width: 100%;
 }
 
@@ -85,46 +92,68 @@ body {
   box-shadow: -2px 1px 15px 0px #111;
 }
 
-/*Single component*/
+/*TvSingle component*/
 
-.single {
+.wrapper {
+  transform: translate(0, 30%);
+  background: #393e46;
+  width: 100%;
+  padding: 10rem;
+}
+
+.tv-single {
   display: flex;
   flex-wrap: wrap;
 }
 
-.single .img-container {
-  width: 35%;
+.tv-single .img-container {
+  width: 20%;
   display: inline-block;
   border-radius: 1rem;
   overflow: hidden;
 }
 
-.single img {
-  max-width: 100%;
+.tv-single img {
+  width: 100%;
 }
 
-.single .text {
+.tv-single .info {
+  font-size: 1.5rem;
   width: 55%;
   padding-left: 100px;
   color: #eeeeee;
 }
 
-.single h1 {
-  font-size: 5rem;
-  margin-bottom: 8rem;
+.tv-single h1 {
+  font-size: 4rem;
+  margin-bottom: 2rem;
 }
 
-.single .info {
-  font-size: 1.5rem;
+.tv-single .genres {
   margin-bottom: 5rem;
 }
 
-.single .summary {
-  font-size: 2rem;
-  margin-bottom: 8rem;
+.tv-single .genres span {
+  border-left: #eeeeee 2px solid;
+  padding-left: 1rem;
+  margin-right: 1rem;
+  height: 100%;
 }
 
-.single a button {
+.tv-single .genres span:first-of-type {
+  border-left: none;
+  padding-left: 0;
+}
+
+.tv-single .genres span:last-of-type {
+  margin-right: 0;
+}
+
+.tv-single .summary {
+  font-size: 2rem;
+}
+
+.tv-single a button {
   width: 15rem;
   height: 4rem;
   font-size: 1.5rem;
@@ -133,7 +162,7 @@ body {
   color: #222831;
 }
 
-.single a button:hover {
+.tv-single a button:hover {
   background-color: #222831;
   border: 1px solid #eeeeee;
   color: #eeeeee;

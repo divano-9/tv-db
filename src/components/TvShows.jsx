@@ -19,12 +19,10 @@ const TvShows = () => {
               <div className="img-container">
                 <div className="cover"></div>
                 <img src={image.medium} alt="img" />
-                <div className="h-container">
-                  <h1>{name}</h1>
-                </div>
               </div>
 
               <div className="info">
+                <h1>{name}</h1>
                 <p className="genres">
                   genres: <br />
                   {genres.toString()}

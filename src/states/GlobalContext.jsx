@@ -14,6 +14,15 @@ const GlobalContext = ({ children }) => {
   const url = sUrl + querry;
   const { data, loading, error } = useFetch(url, querry);
 
+  const clearHtml = (text) => {
+    const clear = text
+      .replace("<p>", "")
+      .replace("</p>", "")
+      .replace("<b>", "")
+      .replace("</b>", "");
+    return clear;
+  };
+
   const values = {
     data,
     loading,
@@ -23,6 +32,7 @@ const GlobalContext = ({ children }) => {
     querry,
     setQuerry,
     baseUrl,
+    clearHtml,
   }; // store the values that need to bee passed down to other components
   return <Context.Provider value={{ ...values }}>{children}</Context.Provider>;
 };
