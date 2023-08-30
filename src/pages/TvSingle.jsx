@@ -58,7 +58,9 @@ const TvSingle = () => {
                 return <span key={index}>{genre}</span>;
               })}
             </div>
-            <div className="summary">{clearHtml(data.summary)}</div>
+            <div className="summary">
+              {data.summary === null ? <p>N/A</p> : clearHtml(data.summary)}
+            </div>
           </div>
         </div>
       </section>

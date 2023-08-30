@@ -130,13 +130,14 @@ img {
 }
 
 .header-single button {
-  transform: translate(0, 47%);
+  transform: translate(0, 60%);
   overflow: hidden;
   border: none;
   border-radius: 0.5rem;
 }
 
-.header-single .back-btn a {
+.header-single .back-btn a,
+.fav-btn a {
   font-size: 1.5rem;
   font-weight: 600;
   background-color: #eeeeee;
@@ -145,7 +146,8 @@ img {
   display: inline-block;
 }
 
-.header-single .back-btn:hover a {
+.header-single .back-btn:hover a,
+.fav-btn:hover a {
   background-color: #fff;
 }
 
@@ -219,7 +221,7 @@ header.header-search {
 }
 
 .search {
-  transform: translate(0, 80%);
+  transform: translate(0, 50%);
 }
 
 .search h3 {
@@ -228,10 +230,14 @@ header.header-search {
   font-size: 2rem;
 }
 
+.search .fav-btn {
+  margin-left: 3rem;
+}
+
 /*Favourites*/
 
 .header-favourites button {
-  transform: translate(0, 47%);
+  transform: translate(0, 60%);
   overflow: hidden;
   border: none;
   border-radius: 0.5rem;
