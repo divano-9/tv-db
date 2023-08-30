@@ -15,23 +15,27 @@ const TvShows = () => {
 
         return (
           <article className="tv-show" key={id}>
-            <Link to={`/shows/${id}`}>
-              <div className="img-container">
-                <div className="cover"></div>
-                <img src={image.medium} alt="img" />
-              </div>
+            <div className="container">
+              <Link to={`/shows/${id}`}>
+                <div className="img-container">
+                  <div className="cover"></div>
+                  <img src={image.medium} alt="img" />
+                </div>
 
-              <div className="info">
-                <h1>{name}</h1>
-                <p className="genres">
-                  genres: <br />
-                  {genres.toString()}
-                </p>
-                <p className="rating">
-                  rating: {rating.average ? rating.average : "N/A"}
-                </p>
-              </div>
-            </Link>
+                <div className="info">
+                  <h1>{name}</h1>
+                  <div className="genres">
+                    {genres.map((genre, index) => {
+                      if (index > 2) return;
+                      return <span key={index}>{genre}</span>;
+                    })}
+                  </div>
+                  <p className="rating">
+                    rating: {rating.average ? rating.average : "N/A"}
+                  </p>
+                </div>
+              </Link>
+            </div>
           </article>
         );
       })}
