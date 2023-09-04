@@ -21,9 +21,13 @@ const TvSingle = () => {
   if (loading || data.image === undefined) return <h2>Loading...</h2>;
 
   return (
-    <>
+    <div className="tv-single">
+      <div className="b-img">
+        <img src={data.image.original} alt="background" />
+      </div>
       <header className="header-single">
         <div className="container">
+          <div className="info-cover"></div>
           <button className="back-btn">
             <Link to="/">Back to Tv Shows</Link>
           </button>
@@ -32,7 +36,7 @@ const TvSingle = () => {
               className="remove-btn"
               onClick={() => removeFromFavourites(data.id)}
             >
-              remove from favourites
+              Remove from Favourites
             </button>
           ) : (
             <button
@@ -46,25 +50,29 @@ const TvSingle = () => {
           )}
         </div>
       </header>
-      <section className="tv-single">
+      <section>
         <div className="container container-single">
           <div className="img-container">
             <img src={data.image.medium} alt={data.name} />
           </div>
-          <div className="info">
-            <h1>{data.name}</h1>
+          <div className="main-info">
+            <h1 className="title">{data.name}</h1>
+
+            <div className="summary">
+              {data.summary === null ? <p>N/A</p> : clearHtml(data.summary)}
+            </div>
+          </div>
+          <div className="side-info">
             <div className="genres">
               {data.genres.map((genre, index) => {
                 return <span key={index}>{genre}</span>;
               })}
             </div>
-            <div className="summary">
-              {data.summary === null ? <p>N/A</p> : clearHtml(data.summary)}
-            </div>
           </div>
         </div>
       </section>
-    </>
+      <footer></footer>
+    </div>
   );
 };
 

@@ -5,28 +5,36 @@
 }
 html {
   font-size: 62.5%;
+  min-height: 100vh;
 }
 
 body {
   background: #222831;
+  min-height: 100vh;
 }
 
 #root {
   max-width: 100%;
   padding: 0;
-  min-height: 1vh;
+  min-height: 100vh;
+  position: relative;
 }
 
 .container {
-  max-width: 1280px;
+  max-width: 1500px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
 }
 
-header {
+header,
+footer {
   background: #393e46;
   height: 6rem;
+}
+
+footer {
+  width: 100%;
 }
 
 a {
@@ -125,8 +133,52 @@ img {
 
 /*TvSingle component*/
 
+.tv-single {
+  color: #eeeeee;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.tv-single .container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.tv-single .b-img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -2;
+  opacity: 0.35;
+  filter: blur(20px);
+}
+
+.tv-single .info-cover {
+  width: 25%;
+  background: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  z-index: -1;
+}
+
+.tv-single section {
+  width: 100%;
+}
+
 .header-single {
-  margin-bottom: 12rem;
+  width: 100%;
+}
+
+.header-single .container {
+  position: relative;
 }
 
 .header-single button {
@@ -144,6 +196,11 @@ img {
   color: #222831;
   padding: 0.5rem;
   display: inline-block;
+}
+
+.header-single .back-btn {
+  position: absolute;
+  left: 0;
 }
 
 .header-single .back-btn:hover a,
@@ -189,10 +246,13 @@ img {
   overflow: hidden;
 }
 
-.tv-single .info {
+.tv-single .main-info {
+  width: 40%;
+}
+
+.tv-single .side-info {
   font-size: 1.5rem;
-  width: 55%;
-  padding-left: 100px;
+  width: 25%;
   color: #eeeeee;
 }
 
