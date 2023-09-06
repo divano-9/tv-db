@@ -21,7 +21,7 @@ body {
 }
 
 .container {
-  max-width: 1500px;
+  width: 1280px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -61,6 +61,12 @@ img {
 
 /*TvShows component*/
 
+h1.no-shows {
+  color: #eeeeee;
+  font-size: 2.5rem;
+  margin-top: 5rem;
+}
+
 .tv-shows {
   max-width: 1280px;
   margin: 0 auto;
@@ -70,28 +76,32 @@ img {
 
 .tv-show {
   padding: 0;
+  width: 20rem;
+  margin: 3rem;
+}
+
+.tv-shows article:nth-child(5n) {
+  margin-right: 0;
+}
+
+.tv-show:first-child {
+  margin-left: 0;
+}
+
+.tv-shows article:nth-child(6n) {
+  margin-left: 0;
 }
 
 .tv-show a {
   font-size: 1.5rem;
   background: #393e46;
   color: #eeeeee;
-  width: 22rem;
-  margin: 3rem;
   border-radius: 1rem;
-  position: relative;
-}
-
-.tv-show a .h-container {
-  height: 5rem;
-  position: absolute;
-  bottom: 10px;
-  padding: 0 1rem;
-  margin-bottom: 1rem;
+  width: 100%;
 }
 
 .tv-show a h1 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-bottom: 2rem;
 }
 
@@ -99,12 +109,16 @@ img {
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   overflow: hidden;
-  margin-bottom: 2rem;
+
   position: relative;
 }
 
 .tv-show a .info {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   margin-bottom: 2rem;
+  background: #393e46;
+  transform: translate(0, -5px);
 }
 
 .tv-show a .info .genres {
@@ -173,12 +187,9 @@ img {
   width: 100%;
 }
 
-.header-single {
-  width: 100%;
-}
-
 .header-single .container {
-  position: relative;
+  display: block;
+  text-align: left;
 }
 
 .header-single button {
@@ -189,7 +200,8 @@ img {
 }
 
 .header-single .back-btn a,
-.fav-btn a {
+.fav-btn a,
+.to-fav a {
   font-size: 1.5rem;
   font-weight: 600;
   background-color: #eeeeee;
@@ -198,45 +210,41 @@ img {
   display: inline-block;
 }
 
-.header-single .back-btn {
-  position: absolute;
-  left: 0;
+.header-single .to-fav {
+  margin-left: 2.5rem;
 }
 
 .header-single .back-btn:hover a,
-.fav-btn:hover a {
+.to-fav:hover a {
   background-color: #fff;
 }
 
-.header-single .fav-btn,
-.header-single .remove-btn {
+.tv-single .fav-btn,
+.tv-single .remove-btn {
   font-size: 1.5rem;
   font-weight: 600;
   background-color: #ae34d3;
   color: #eeeeee;
-  padding: 0.5rem;
+  padding: 1rem;
   display: inline-block;
-  margin-left: 4rem;
+  margin-bottom: 4rem;
+  overflow: hidden;
+  border: none;
+  border-radius: 0.5rem;
 }
 
-.header-single .fav-btn:hover {
+.tv-single .fav-btn:hover {
   background-color: #b758d4;
   cursor: pointer;
 }
 
-.header-single .remove-btn {
+.tv-single .remove-btn {
   background-color: rgb(224, 22, 22);
 }
 
-.header-single .remove-btn:hover {
+.tv-single .remove-btn:hover {
   background-color: rgb(204, 74, 74);
   cursor: pointer;
-}
-
-.header-single .remove-btn:hover .tv-single {
-  padding: 4rem 0;
-  background: #393e46;
-  width: 100%;
 }
 
 .tv-single .img-container {
@@ -276,12 +284,14 @@ img {
 
 /*Search component*/
 
-header.header-search {
+.header-search {
   color: #eeeeee;
+  text-align: center;
 }
 
 .search {
   transform: translate(0, 50%);
+  margin: 0 auto;
 }
 
 .search h3 {

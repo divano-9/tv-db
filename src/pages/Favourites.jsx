@@ -17,14 +17,14 @@ const Favourites = () => {
         </div>
       </header>
       <section className="tv-shows">
-        {favourites.map((single) => {
-          const { data, loading } = useFetch(single, favourites);
+        <div className="container">
+          {favourites.map((single) => {
+            const { data, loading } = useFetch(single, favourites);
 
-          if (loading || data.image === undefined) return <h2>Loading...</h2>;
+            if (loading || data.image === undefined) return <h2>Loading...</h2>;
 
-          return (
-            <article className="tv-show" key={data.id}>
-              <div className="container">
+            return (
+              <article className="tv-show" key={data.id}>
                 <Link to={`/shows/${data.id}`}>
                   <div className="img-container">
                     <div className="cover"></div>
@@ -45,10 +45,10 @@ const Favourites = () => {
                     </p>
                   </div>
                 </Link>
-              </div>
-            </article>
-          );
-        })}
+              </article>
+            );
+          })}
+        </div>
       </section>
     </>
   );

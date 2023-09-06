@@ -7,15 +7,19 @@ const TvShows = () => {
   console.log(data);
 
   if (loading) return <h2>Loading...</h2>;
+  if (data.length === 0)
+    return <h1 className="no-shows">No such tv shows, try something else</h1>;
 
   return (
     <section className="tv-shows">
-      {data.map((single) => {
-        const { id, name, image, genres, rating } = single.show;
-
-        return (
-          <article className="tv-show" key={id}>
-            <div className="container">
+      <div className="container">
+        {data.map((single) => {
+          const { id, name, image, genres, rating } = single.show;
+          if (image === null) {
+            return;
+          }
+          return (
+            <article className="tv-show" key={id}>
               <Link to={`/shows/${id}`}>
                 <div className="img-container">
                   <div className="cover"></div>
@@ -35,10 +39,10 @@ const TvShows = () => {
                   </p>
                 </div>
               </Link>
-            </div>
-          </article>
-        );
-      })}
+            </article>
+          );
+        })}
+      </div>
     </section>
   );
 };

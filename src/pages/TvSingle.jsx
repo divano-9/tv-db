@@ -31,23 +31,9 @@ const TvSingle = () => {
           <button className="back-btn">
             <Link to="/">Back to Tv Shows</Link>
           </button>
-          {favourites.includes(baseUrl + data.id) ? (
-            <button
-              className="remove-btn"
-              onClick={() => removeFromFavourites(data.id)}
-            >
-              Remove from Favourites
-            </button>
-          ) : (
-            <button
-              className="fav-btn"
-              onClick={() => {
-                getFavourites(data.id);
-              }}
-            >
-              Add to Favourites
-            </button>
-          )}
+          <button className="to-fav">
+            <Link to="/shows/favourites">Go to Favourites</Link>
+          </button>
         </div>
       </header>
       <section>
@@ -57,7 +43,24 @@ const TvSingle = () => {
           </div>
           <div className="main-info">
             <h1 className="title">{data.name}</h1>
-
+            {/* favourites button */}
+            {favourites.includes(baseUrl + data.id) ? (
+              <button
+                className="remove-btn"
+                onClick={() => removeFromFavourites(data.id)}
+              >
+                Remove from Favourites
+              </button>
+            ) : (
+              <button
+                className="fav-btn"
+                onClick={() => {
+                  getFavourites(data.id);
+                }}
+              >
+                Add to Favourites
+              </button>
+            )}
             <div className="summary">
               {data.summary === null ? <p>N/A</p> : clearHtml(data.summary)}
             </div>
