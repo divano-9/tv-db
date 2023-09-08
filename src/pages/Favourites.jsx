@@ -2,18 +2,20 @@ import { useContext } from "react";
 import { Context } from "../states/GlobalContext";
 import { Link } from "react-router-dom";
 import useFetch from "../hooks/UseFetch";
+import Graph from "../components/Graph";
 
 const Favourites = () => {
   const { favourites } = useContext(Context);
-  console.log(favourites);
-  console.log(localStorage);
+
   return (
     <>
       <header className="header-favourites">
         <div className="container">
-          <button className="back-btn">
-            <Link to="/">Back to Tv Shows</Link>
-          </button>
+          <div className="btn-container">
+            <button className="back-btn">
+              <Link to="/">Back to Tv Shows</Link>
+            </button>
+          </div>
         </div>
       </header>
       <section className="tv-shows">
@@ -49,6 +51,7 @@ const Favourites = () => {
             );
           })}
         </div>
+        <Graph />
       </section>
     </>
   );

@@ -59,6 +59,22 @@ img {
   margin-right: 0;
 }
 
+/*buttons animation*/
+button {
+  display: inline-block;
+}
+
+button:link,
+button:visited {
+  transition: all 0.2s;
+}
+
+button:active,
+.back-btn:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
 /*TvShows component*/
 
 h1.no-shows {
@@ -78,6 +94,16 @@ h1.no-shows {
   padding: 0;
   width: 20rem;
   margin: 3rem;
+}
+
+.tv-show:link,
+.tv-show:visited {
+  transition: all 0.2s;
+}
+
+.tv-show:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .tv-shows article:nth-child(5n) {
@@ -192,8 +218,11 @@ h1.no-shows {
   text-align: left;
 }
 
-.header-single button {
+.header-single .btn-container {
   transform: translate(0, 60%);
+}
+
+.header-single button {
   overflow: hidden;
   border: none;
   border-radius: 0.5rem;
@@ -306,8 +335,11 @@ h1.no-shows {
 
 /*Favourites*/
 
-.header-favourites button {
+.header-favourites .btn-container {
   transform: translate(0, 60%);
+}
+
+.header-favourites button {
   overflow: hidden;
   border: none;
   border-radius: 0.5rem;

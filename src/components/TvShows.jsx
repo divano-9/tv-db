@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 const TvShows = () => {
   const { loading, data } = useContext(Context);
-  console.log(data);
 
   if (loading) return <h2>Loading...</h2>;
   if (data.length === 0)

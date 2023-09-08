@@ -32,15 +32,12 @@ const GlobalContext = ({ children }) => {
   // Get favourite shows and store them in local storage
   const getFavourites = (showId) => {
     localStorage.setItem(showId, baseUrl + showId);
-    console.log(localStorage);
     setFavourites((current) => [...current, localStorage.getItem(showId)]);
   };
 
   // Remove show from favourites and local storage
   const removeFromFavourites = (id) => {
     localStorage.removeItem(id);
-    console.log(id);
-    console.log(localStorage);
     setFavourites((current) =>
       current.filter((show) => {
         return show !== baseUrl + id;

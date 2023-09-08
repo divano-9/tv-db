@@ -28,12 +28,14 @@ const TvSingle = () => {
       <header className="header-single">
         <div className="container">
           <div className="info-cover"></div>
-          <button className="back-btn">
-            <Link to="/">Back to Tv Shows</Link>
-          </button>
-          <button className="to-fav">
-            <Link to="/shows/favourites">Go to Favourites</Link>
-          </button>
+          <div className="btn-container">
+            <button className="back-btn">
+              <Link to="/">Back to Tv Shows</Link>
+            </button>
+            <button className="to-fav">
+              <Link to="/shows/favourites">Go to Favourites</Link>
+            </button>
+          </div>
         </div>
       </header>
       <section>
