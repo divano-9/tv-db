@@ -287,24 +287,45 @@ h1.no-shows {
   width: 40%;
 }
 
-.tv-single .side-info {
-  font-size: 1.5rem;
-  width: 25%;
-  color: #eeeeee;
-}
-
 .tv-single h1 {
   font-size: 4rem;
   margin-bottom: 2rem;
 }
 
+.tv-single .side-info {
+  font-size: 1.5rem;
+  width: 25%;
+  color: #eeeeee;
+  text-align: left;
+}
+
 .tv-single .genres {
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
+}
+
+.tv-single .side-info p {
+  padding: 0 2rem;
+}
+
+.tv-single .side-info .details p {
+  margin-bottom: 2rem;
+}
+
+.tv-single .side-info .details p:last-of-type {
+  margin-bottom: 0;
 }
 
 .tv-single .genres span {
   padding-left: 1rem;
   margin-right: 1rem;
+}
+
+.tv-single hr:first-of-type {
+  margin-bottom: 1rem;
+}
+
+.tv-single hr:last-of-type {
+  margin-top: 1rem;
 }
 
 .tv-single .summary {

@@ -18,6 +18,10 @@ const TvSingle = () => {
 
   const { data, loading, error } = useFetch(url);
 
+  const { data: episodes } = useFetch(url + "/episodes");
+
+  let episodeNo = episodes.length;
+
   if (loading || data.image === undefined) return <h2>Loading...</h2>;
 
   return (
@@ -69,9 +73,24 @@ const TvSingle = () => {
           </div>
           <div className="side-info">
             <div className="genres">
-              {data.genres.map((genre, index) => {
-                return <span key={index}>{genre}</span>;
-              })}
+              <hr></hr>
+              <p>
+                Genres:
+                {data.genres.map((genre, index) => {
+                  if (index > 2) {
+                    return;
+                  }
+                  return <span key={index}>{genre}</span>;
+                })}
+              </p>
+
+              <hr></hr>
+            </div>
+            <div className="details">
+              <p className="language">Language: {data.language}</p>
+              <p className="premiered">Premiered: {data.premiered}</p>
+              <p className="status">Status: {data.status}</p>
+              <p className="episodes">Number of Episodes: {episodeNo}</p>
             </div>
           </div>
         </div>
