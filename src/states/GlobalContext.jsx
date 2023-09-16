@@ -1,49 +1,33 @@
-import { createContext, useState, useEffect } from "react";
-import useFetch from "../hooks/UseFetch";
-import axios from "axios";
+import { createContext, useState } from 'react';
+import useFetch from '../hooks/UseFetch';
+import clearHtml from '../utils/clearHtml';
+import removeFromFavourites from '../utils/removeFromFavourites';
+import addFavourites from '../utils/addFavourites';
+import getFavourites from '../utils/getFavourites';
+import PropTypes from 'prop-types';
 
 export const Context = createContext(); // import {Context}, then useContext(Context)
 
 const GlobalContext = ({ children }) => {
-  const sUrl = "https://api.tvmaze.com/search/shows?q=";
-  const baseUrl = "https://api.tvmaze.com/shows/";
+  GlobalContext.propTypes = {
+    children: PropTypes.object,
+  };
 
-  const [searchQ, setSearchQ] = useState("");
-  const [querry, setQuerry] = useState("Attack on Titan");
-  const [favourites, setFavourites] = useState([
-    baseUrl + 1,
-    baseUrl + 2,
-    baseUrl + 3,
-  ]);
+  const sUrl = 'https://api.tvmaze.com/search/shows?q=';
+  const baseUrl = 'https://api.tvmaze.com/shows/';
+
+  const [searchQ, setSearchQ] = useState('');
+  const [querry, setQuerry] = useState('Attack on Titan');
+  const [favourites, setFavourites] = useState([]);
 
   const url = sUrl + querry;
-  const { data, loading, error } = useFetch(url, querry);
+  const { data, loading, error } = useFetch(url);
 
   //Remove HTLM elements from a string
-  const clearHtml = (text) => {
-    const clear = text
-      .replace("<p>", "")
-      .replace("</p>", "")
-      .replace("<b>", "")
-      .replace("</b>", "");
-    return clear;
-  };
 
   // Get favourite shows and store them in local storage
-  const getFavourites = (showId) => {
-    localStorage.setItem(showId, baseUrl + showId);
-    setFavourites((current) => [...current, localStorage.getItem(showId)]);
-  };
 
   // Remove show from favourites and local storage
-  const removeFromFavourites = (id) => {
-    localStorage.removeItem(id);
-    setFavourites((current) =>
-      current.filter((show) => {
-        return show !== baseUrl + id;
-      })
-    );
-  };
 
   const values = {
     data,
@@ -57,6 +41,7 @@ const GlobalContext = ({ children }) => {
     clearHtml,
     favourites,
     setFavourites,
+    addFavourites,
     getFavourites,
     removeFromFavourites,
   }; // store the values that need to bee passed down to other components

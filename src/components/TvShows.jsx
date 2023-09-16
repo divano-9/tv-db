@@ -1,6 +1,6 @@
-import { useContext } from "react";
-import { Context } from "../states/GlobalContext";
-import { Link } from "react-router-dom";
+import { useContext } from 'react';
+import { Context } from '../states/GlobalContext';
+import { Link } from 'react-router-dom';
 
 const TvShows = () => {
   const { loading, data } = useContext(Context);
@@ -34,7 +34,7 @@ const TvShows = () => {
                     })}
                   </div>
                   <p className="rating">
-                    rating: {rating.average ? rating.average : "N/A"}
+                    rating: {rating.average ? rating.average : 'N/A'}
                   </p>
                 </div>
               </Link>

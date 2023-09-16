@@ -1,28 +1,29 @@
-import { useContext } from "react";
-import { useParams, Link } from "react-router-dom";
-import { Context } from "../states/GlobalContext";
-import axios from "axios";
-import useFetch from "../hooks/UseFetch";
+import { useContext } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { Context } from '../states/GlobalContext';
+import useFetch from '../hooks/UseFetch';
 
 const TvSingle = () => {
   const { id } = useParams();
   const {
     baseUrl,
     clearHtml,
-    getFavourites,
+    addFavourites,
     favourites,
     setFavourites,
+    getFavourites,
     removeFromFavourites,
   } = useContext(Context);
   const url = baseUrl + id;
 
   const { data, loading, error } = useFetch(url);
 
-  const { data: episodes } = useFetch(url + "/episodes");
+  const { data: episodes } = useFetch(url + '/episodes');
 
   let episodeNo = episodes.length;
 
   if (loading || data.image === undefined) return <h2>Loading...</h2>;
+  if (error) return <h1>{error}</h1>;
 
   return (
     <div className="tv-single">
@@ -50,10 +51,10 @@ const TvSingle = () => {
           <div className="main-info">
             <h1 className="title">{data.name}</h1>
             {/* favourites button */}
-            {favourites.includes(baseUrl + data.id) ? (
+            {favourites.find((show) => show.id === data.id) ? (
               <button
                 className="remove-btn"
-                onClick={() => removeFromFavourites(data.id)}
+                onClick={() => removeFromFavourites(setFavourites, data.id)}
               >
                 Remove from Favourites
               </button>
@@ -61,7 +62,8 @@ const TvSingle = () => {
               <button
                 className="fav-btn"
                 onClick={() => {
-                  getFavourites(data.id);
+                  addFavourites(data.id, data);
+                  getFavourites(data.id, setFavourites);
                 }}
               >
                 Add to Favourites

@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
-const useFetch = (url, dep) => {
+const useFetch = (url) => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
@@ -19,11 +19,11 @@ const useFetch = (url, dep) => {
       .finally(() => {
         setLoading(false); // after success or error set loading to false
       });
-  }, [dep]); // render again when url changes
+  }, [url]); // render again when url changes
 
   const refetch = () => {
     // fetch api url again (on click, or other events)
-    console.log("refetch!");
+    console.log('refetch!');
     setLoading(true);
     axios
       .get(url)
