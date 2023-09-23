@@ -1,0 +1,142 @@
+@media (device-width < 1220px) {
+  /*global*/
+  html {
+    font-size: 50%;
+  }
+  /*search*/
+  .header-search .search {
+    margin: 0;
+  }
+
+  .container {
+    width: 80%;
+  }
+
+  .tv-shows .container {
+    justify-content: center;
+  }
+
+  .search {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .header-search {
+    height: fit-content;
+    padding: 2rem 0;
+  }
+  /*search end*/
+
+  /*tv-single*/
+  .side-info .genres {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .side-info .genres ul {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+  }
+  /*tv-shows*/
+  .tv-shows .tv-show {
+    height: 380px;
+  }
+
+  .tv-shows .info {
+    text-align: center;
+  }
+}
+
+@media (device-width < 1000px) {
+  .side-info .genres p {
+    margin-right: 0;
+  }
+
+  .side-info .genres ul {
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  .tv-single section {
+    flex-wrap: wrap;
+  }
+
+  .tv-single .img-container {
+    width: 30%;
+  }
+
+  .tv-single .main-info {
+    width: 60%;
+  }
+
+  .tv-single .side-info {
+    width: 100%;
+    margin-bottom: 4rem;
+    padding: 3rem 0;
+  }
+}
+
+@media (device-width < 745px) {
+  .tv-single .img-container {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .tv-single .main-info {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .fusioncharts-container {
+    display: none !important;
+  }
+}
+
+@media (device-width < 587px) {
+  .tv-single .main-info {
+    padding-top: 0;
+  }
+
+  .search .fav-btn {
+    margin-top: 1rem;
+  }
+}
+
+@media (device-width < 445px) {
+  .tv-single .img-container {
+    width: 60%;
+  }
+
+  .header-search .search h3 {
+    margin-right: 0;
+  }
+
+  .header-single .btn-container {
+    margin: 0 auto;
+  }
+}
+
+@media (device-width < 309px) {
+  .header-single {
+    height: fit-content;
+    padding: 1rem 0;
+  }
+
+  .header-single .btn-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .header-single .btn-container .to-fav {
+    margin-left: 0;
+    width: 51%;
+    margin-top: 1rem;
+  }
+
+  .tv-single .img-container {
+    width: 70%;
+  }
+}

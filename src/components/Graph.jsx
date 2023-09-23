@@ -47,6 +47,9 @@ const Graph = () => {
       data: chartData,
     },
   };
+  if (favourites.length === 0) {
+    return;
+  }
 
   return <ReactFC {...chartConfigs} />;
 };

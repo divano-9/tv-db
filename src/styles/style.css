@@ -7,33 +7,43 @@
 }
 html {
   font-size: 62.5%;
-  min-height: 100vh;
+  height: 100%;
   font-family: 'Roboto', sans-serif;
+  height: 100%;
 }
 
 body {
   background: #222831;
-  min-height: 100vh;
+  height: 100%;
 }
 
 #root {
   max-width: 100%;
   padding: 0;
-  min-height: 100vh;
+  height: 100%;
   position: relative;
 }
 
 .container {
-  width: 1280px;
+  width: 1200px;
+  height: 100%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  padding: 2rem;
 }
 
 header,
 footer {
   background: #393e46;
   height: 6rem;
+}
+
+header .container {
+  padding: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 footer {
@@ -84,10 +94,16 @@ h1.no-shows {
   flex-wrap: wrap;
 }
 
+.tv-shows .container {
+  padding-right: 5rem;
+}
+
 .tv-show {
   padding: 0;
-  width: 20rem;
-  margin: 3rem;
+  width: 200px;
+  height: 450px;
+  margin-left: 3rem;
+  margin-top: 3rem;
 }
 
 .tv-show:link,
@@ -100,29 +116,21 @@ h1.no-shows {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-.tv-shows article:nth-child(5n) {
-  margin-right: 0;
-}
-
-.tv-show:first-child {
-  margin-left: 0;
-}
-
-.tv-shows article:nth-child(6n) {
-  margin-left: 0;
-}
-
 .tv-show a {
+  display: inline-block;
   font-size: 1.5rem;
   background: #393e46;
   color: #eeeeee;
-  border-radius: 1rem;
   width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-top-right-radius: 10px 10px;
+  border-top-left-radius: 10px 10px;
 }
 
 .tv-show a h1 {
-  font-size: 2.2rem;
-  margin-bottom: 2rem;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .tv-show a .img-container {
@@ -135,13 +143,17 @@ h1.no-shows {
 
 .tv-show a .info {
   padding: 2rem 1rem;
-  margin-bottom: 2rem;
   background: #393e46;
   transform: translate(0, -5px);
 }
 
 .tv-show a .info .genres {
   margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.tv-show .info .rating {
+  font-size: 1.3rem;
 }
 
 .tv-show .genres span {
@@ -180,14 +192,18 @@ h1.no-shows {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 100vh;
+  height: 100%;
   position: relative;
 }
 
 .tv-single .container {
+  position: relative;
+  padding: 0;
+}
+
+.tv-single section {
   display: flex;
   justify-content: space-between;
-  position: relative;
 }
 
 .tv-single .b-img {
@@ -207,13 +223,12 @@ h1.no-shows {
 }
 
 .tv-single .info-cover {
-  width: 25%;
+  width: 100%;
   background: rgba(255, 255, 255, 0.1);
   position: absolute;
   right: 0;
   top: 0;
-  height: 100vh;
-  min-height: 60rem;
+  height: 100%;
   z-index: -1;
 }
 
@@ -222,32 +237,6 @@ h1.no-shows {
 }
 
 /*header-single*/
-
-.header-single .container {
-  display: block;
-  text-align: left;
-}
-
-.header-single .btn-container {
-  transform: translate(0, 60%);
-}
-
-.header-single button {
-  overflow: hidden;
-  border: none;
-  border-radius: 0.5rem;
-}
-
-.header-single .back-btn a,
-.fav-btn a,
-.to-fav a {
-  font-size: 1.5rem;
-  font-weight: 600;
-  background-color: #eeeeee;
-  color: #222831;
-  padding: 0.5rem;
-  display: inline-block;
-}
 
 .header-single .to-fav {
   margin-left: 2.5rem;
@@ -312,14 +301,30 @@ h1.no-shows {
   color: #eeeeee;
   text-align: left;
   padding-top: 6rem;
+  position: relative;
 }
 
 .tv-single .genres {
-  margin-bottom: 3rem;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  max-width: 100%;
+  display: flex;
+}
+
+.tv-single .genres ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tv-single .genres ul li {
+  margin-left: 1rem;
 }
 
 .tv-single .side-info p {
-  padding: 0 2rem;
+  margin: 0 2rem;
 }
 
 .tv-single .side-info .details p {
@@ -359,11 +364,9 @@ h1.no-shows {
 
 .header-search {
   color: #eeeeee;
-  text-align: center;
 }
 
 .search {
-  transform: translate(0, 50%);
   margin: 0 auto;
 }
 
@@ -374,30 +377,43 @@ h1.no-shows {
 }
 
 .search .fav-btn {
-  margin-left: 3rem;
+  margin: 0 3rem;
+}
+
+.search input {
+  width: 20rem;
+  height: 3rem;
 }
 
 /*Favourites*/
 
-.header-favourites .btn-container {
-  transform: translate(0, 60%);
+.header-favourites .to-fav {
+  display: none;
 }
 
-.header-favourites button {
+.favourites .no-fav {
+  font-size: 2.5rem;
+  color: #eeeeee;
+  margin-top: 4rem;
+}
+
+/*Header*/
+
+header button {
   overflow: hidden;
   border: none;
   border-radius: 0.5rem;
-}
-
-.header-favourites .back-btn a {
   font-size: 1.5rem;
   font-weight: 600;
   background-color: #eeeeee;
-  color: #222831;
   padding: 0.5rem;
   display: inline-block;
 }
 
-.header-favourites .back-btn:hover a {
+header button a {
+  color: #222831;
+}
+
+header button:hover a {
   background-color: #fff;
 }
