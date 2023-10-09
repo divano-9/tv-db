@@ -3,9 +3,12 @@ import { Context } from '../states/GlobalContext';
 import { Link } from 'react-router-dom';
 import Graph from '../components/Graph';
 import Header from '../components/Header';
+import { FaTimes } from 'react-icons/fa';
 
 const Favourites = () => {
-  const { favourites } = useContext(Context);
+  const { favourites, removeFromFavourites, setFavourites } =
+    useContext(Context);
+  console.log(favourites);
 
   return (
     <>
@@ -20,6 +23,13 @@ const Favourites = () => {
                 <article className="tv-show" key={show.id}>
                   <Link to={`/shows/${show.id}`}>
                     <div className="img-container">
+                      <FaTimes
+                        className=" remove"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          removeFromFavourites(setFavourites, show.id);
+                        }}
+                      />
                       <div className="cover"></div>
                       <img src={show.image.medium} alt="img" />
                     </div>

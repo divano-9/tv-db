@@ -85,6 +85,7 @@ h1.no-shows {
   color: #eeeeee;
   font-size: 2.5rem;
   margin-top: 5rem;
+  text-align: center;
 }
 
 .tv-shows {
@@ -183,6 +184,15 @@ h1.no-shows {
   -webkit-box-shadow: -2px 1px 15px 0px #111;
   -moz-box-shadow: -2px 1px 15px 0px #111;
   box-shadow: -2px 1px 15px 0px #111;
+}
+
+.tv-show .star {
+  color: #b758d4;
+  position: absolute;
+  font-size: 2.5rem;
+  top: 2%;
+  right: 2%;
+  z-index: 1;
 }
 
 /*TvSingle component*/
@@ -360,6 +370,51 @@ h1.no-shows {
   font-size: 2rem;
 }
 
+.tv-single .cast {
+  margin-top: 2rem;
+}
+
+.tv-single .cast ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 2rem;
+  margin-top: 2rem;
+}
+
+.tv-single .cast li {
+  width: 45%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.tv-single .cast a {
+  text-decoration: none;
+  color: #eeeeee;
+}
+
+.tv-single .cast a:hover {
+  color: #fff;
+}
+
+.tv-single .cast .icon-container {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.tv-single .cast p {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.tv-single .cast .cast-title {
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+}
+
 /*Search component*/
 
 .header-search {
@@ -383,6 +438,8 @@ h1.no-shows {
 .search input {
   width: 20rem;
   height: 3rem;
+  padding: 0 2rem;
+  font-size: 1.8rem;
 }
 
 /*Favourites*/
@@ -395,6 +452,15 @@ h1.no-shows {
   font-size: 2.5rem;
   color: #eeeeee;
   margin-top: 4rem;
+}
+
+.favourites .remove {
+  color: #d84944;
+  position: absolute;
+  font-size: 2.5rem;
+  top: 2%;
+  right: 2%;
+  z-index: 1;
 }
 
 /*Header*/

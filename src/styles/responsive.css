@@ -75,6 +75,10 @@
     margin-bottom: 4rem;
     padding: 3rem 0;
   }
+
+  .tv-single .cast li {
+    width: 17%;
+  }
 }
 
 @media (device-width < 745px) {
@@ -92,6 +96,10 @@
   .fusioncharts-container {
     display: none !important;
   }
+
+  .tv-single .cast li {
+    width: 30%;
+  }
 }
 
 @media (device-width < 587px) {
@@ -101,6 +109,10 @@
 
   .search .fav-btn {
     margin-top: 1rem;
+  }
+
+  .tv-single .cast li {
+    width: 40%;
   }
 }
 

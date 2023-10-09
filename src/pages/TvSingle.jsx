@@ -21,6 +21,9 @@ const TvSingle = () => {
 
   const { data: episodes } = useFetch(url + '/episodes');
 
+  const { data: cast } = useFetch(url + '/cast');
+  console.log('cast: ', cast);
+
   let episodeNo = episodes.length;
 
   if (loading || data.image === undefined) return <h2>Loading...</h2>;
@@ -82,6 +85,25 @@ const TvSingle = () => {
                 <p className="premiered">Premiered: {data.premiered}</p>
                 <p className="status">Status: {data.status}</p>
                 <p className="episodes">Number of Episodes: {episodeNo}</p>
+              </div>
+              <div className="cast">
+                <p className="cast-title">Cast</p>
+                <ul>
+                  {cast.map((single, index) => {
+                    const { name, url, image, id } = single.person;
+                    if (index > 3) return;
+                    return (
+                      <li key={id}>
+                        <a href={url}>
+                          <p>{name}</p>
+                          <div className="icon-container">
+                            <img src={image.medium} alt="cast icon" />
+                          </div>
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
             </div>
           </section>
