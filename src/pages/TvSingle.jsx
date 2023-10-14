@@ -97,7 +97,11 @@ const TvSingle = () => {
                         <a href={url}>
                           <p>{name}</p>
                           <div className="icon-container">
-                            <img src={image.medium} alt="cast icon" />
+                            {image === null ? (
+                              <p>No image available</p>
+                            ) : (
+                              <img src={image.medium} alt="cast icon" />
+                            )}
                           </div>
                         </a>
                       </li>

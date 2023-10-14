@@ -378,20 +378,24 @@ h1.no-shows {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   padding: 0 2rem;
   margin-top: 2rem;
 }
 
 .tv-single .cast li {
-  width: 45%;
   height: auto;
-  margin-bottom: 1rem;
+  margin: 0 auto;
+  margin-bottom: 5rem;
 }
 
 .tv-single .cast a {
   text-decoration: none;
   color: #eeeeee;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100px;
+  height: 150px;
 }
 
 .tv-single .cast a:hover {
@@ -401,18 +405,20 @@ h1.no-shows {
 .tv-single .cast .icon-container {
   border-radius: 50%;
   overflow: hidden;
+  top: 0;
+  width: 100px;
+  height: 100px;
 }
 
 .tv-single .cast p {
   text-align: center;
-  margin: 1rem 0;
 }
 
 .tv-single .cast .cast-title {
   border-top: 1px solid #eeeeee;
   border-bottom: 1px solid #eeeeee;
   padding: 1rem 0;
-  margin-bottom: 1rem;
+  margin: 0;
 }
 
 /*Search component*/
