@@ -1,5 +1,5 @@
 import { createContext, useState } from 'react';
-import useFetch from '../hooks/UseFetch';
+import useFetch from '../hooks/useFetch';
 import clearHtml from '../utils/clearHtml';
 import removeFromFavourites from '../utils/removeFromFavourites';
 import addFavourites from '../utils/addFavourites';
