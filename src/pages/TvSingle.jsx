@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Context } from '../states/GlobalContext';
-import useFetch from '../hooks/UseFetch';
+import useFetch from '../hooks/useFetch';
 import Header from '../components/Header';
 
 const TvSingle = () => {
