@@ -1,8 +1,28 @@
-# React + Vite
+# Quizz App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<a href="https://divano-quiz-app.netlify.app/">
+TV Show Database
+</a>
 
-Currently, two official plugins are available:
+<br>
+This is a tv show database app I've made for practice. API used: <a href="https://www.tvmaze.com/api">www.tvmaze.com/api</a><br>
+Languages used in making of the app:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<br>
+
+- HTML
+- CSS
+- JavaScript
+- React
+
+## App features:
+
+- tv database search function
+- single page for tv shows with more details
+- link to the API's actors page
+- favourites page with add/remove
+
+## Screenshots
+
+<img src="screenshots/tv-shows-app-screenshot-1.png">
+<img src="screenshots/tv-shows-app-screenshot-2.png">
