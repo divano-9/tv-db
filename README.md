@@ -1,4 +1,4 @@
-# Quizz App
+# TV DB
 
 <a href="https://divano-quiz-app.netlify.app/">
 TV Show Database
