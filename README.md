@@ -1,6 +1,6 @@
 # TV DB
 
-<a href="https://divano-quiz-app.netlify.app/">
+<a href="https://divano-tv-db.netlify.app/">
 TV Show Database
 </a>
 
